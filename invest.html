@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dedicated high-end real estate investment portal by Brightstones Realty. High ROI opportunities and private portfolio management.">
+  <title>Invest | Brightstones Realty</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="%232f5c47"/><path d="M11 21 20 13l9 8" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M14.5 20v9h11v-9" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M17.5 29v-5h5v5" stroke="%23e36c32" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 15.4c2 .7 3.4 2.3 4 4.6"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h5a1 1 0 0 1 1 1v12"/><path d="M7.5 7h2M7.5 11h2M7.5 15h2M17 12h1M17 16h1"/><path d="M2 21h20"/></g></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l1.5 5L8 10a13 13 0 0 0 6 6l2-2.5 5 1.5v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><polyline points="13 6 19 12 13 18"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></symbol>
+  </svg>
+
+  <!-- ============ 3-SECOND LOADING SCREEN ============ -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="pl-inner">
+            <div class="pl-logo-wrap" style="max-width:320px; width:85vw; margin:0 auto 24px; display:flex; align-items:center; justify-content:center; animation:plPulse 2.4s ease-in-out infinite;">
+        <img src="img/logo-white.png" alt="Brightstones Realty" style="width:100%; height:auto; object-fit:contain; filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));">
+      </div>
+      <p class="pl-text">Welcome to Brightstones Realty</p>
+      <div class="pl-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ ANIMATED SVG DOODLE BACKGROUND ============ -->
+  <div class="doodle-bg" aria-hidden="true">
+    <svg class="doodle-track" viewBox="0 0 1920 520" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="dtile" fill="none" stroke="#2f5c47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 132v-40l32-26 32 26v40z"/><path d="M80 132v-22h24v22"/><path d="M112 96h14"/>
+          <circle cx="205" cy="298" r="14"/><path d="M219 298h44M248 298v14M262 298v10"/>
+          <ellipse cx="322" cy="126" rx="20" ry="8"/><path d="M302 126v18c0 4.4 9 8 20 8s20-3.6 20-8v-18"/>
+          <polyline points="410,158 444,124 476,140 512,98"/><path d="M498 96h16v16"/>
+          <path d="M600 78l6.5 13.5 15 2.2-11 10.5 2.7 14.8L600 112l-13.2 7 2.7-14.8-11-10.5 15-2.2z"/>
+          <path d="M690 262q15-20 30 0t30 0 30 0"/>
+          <path d="M842 70v22M831 81h22"/>
+          <path d="M84 428v-44h20v-18h22v62"/><path d="M126 428v-70h26v70"/><path d="M152 428v-36h24v36"/><path d="M70 428h100"/>
+          <path d="M470 408c0-30 18-48 48-48 0 30-18 48-48 48z"/><path d="M476 402c8-18 18-28 34-36"/>
+          <circle cx="742" cy="420" r="20"/><path d="M734 428l16-16"/><circle cx="735" cy="413" r="2.5"/><circle cx="749" cy="427" r="2.5"/>
+          <circle cx="890" cy="300" r="9"/><circle cx="368" cy="330" r="6"/><circle cx="560" cy="60" r="7"/>
+          <path d="M640 380h34l12 12-12 12h-34z" transform="rotate(-8 656 392)"/><circle cx="648" cy="392" r="3"/>
+        </g>
+      </defs>
+      <use href="#dtile" x="0"/>
+      <use href="#dtile" x="960"/>
+    </svg>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Brightstones Realty — Home">
+          <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+          <img class="logo-mark logo-dark" src="img/logo.png" alt="Brightstones Realty">
+        </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="invest.html" class="nav-link active">Invest</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%27d%20like%20to%20make%20an%20offer%20on%20one%20of%20your%20properties." class="btn btn-accent btn-sm header-cta" target="_blank" rel="noopener">Make an Offer</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HIGH-END INVEST HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Private Capital Desk</span>
+        <h1>High-Yield Real Estate Investment &amp; Portfolio Management</h1>
+        <p>A tailored capital advisory service engineered specifically for high-net-worth individuals, family offices, and institutional investors seeking predictable alpha through verified tangible assets.</p>
+      </div>
+    </section>
+
+    <!-- ============ DATA-DRIVEN INVESTMENT PILLARS ============ -->
+    <section class="section" style="padding-top:72px;">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Data-Driven Capital Protection</span>
+          <h2 class="section-title">High Returns-on-Investment (ROI) Options</h2>
+          <p class="section-sub">We combine macroeconomic corridor research, tax-optimized syndication structures, and strict escrow security to deliver sustainable yields.</p>
+        </div>
+
+        <div class="invest-pillars">
+
+          <!-- Pillar 1: High ROI Strategy -->
+          <article class="pillar-card">
+            <span class="tag">14.2% &ndash; 19.3% Target Yield</span>
+            <h3>High ROI Residential Assets</h3>
+            <p>Direct equity allocations in off-plan and newly completed residential developments situated exclusively in supply-constrained employment corridors.</p>
+            <ul class="pillar-features">
+              <li><svg class="ic"><use href="#i-check"/></svg> Guaranteed rental covenants from Day 1</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> Stress-tested against 3 downside scenarios</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> Direct asset ownership with registered title deeds</li>
+            </ul>
+          </article>
+
+          <!-- Pillar 2: Portfolio Management -->
+          <article class="pillar-card">
+            <span class="tag">Hands-Off Turnkey</span>
+            <h3>Bespoke Portfolio Management</h3>
+            <p>Comprehensive asset stewardship for multi-unit owners. From cross-jurisdictional tenant acquisition to routine property preservation and audited accounting.</p>
+            <ul class="pillar-features">
+              <li><svg class="ic"><use href="#i-check"/></svg> Automated quarterly net dividend payouts</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> Digital investor portal with real-time analytics</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> Dedicated Senior Portfolio Director for every client</li>
+            </ul>
+          </article>
+
+          <!-- Pillar 3: Capital Preservation & Exit -->
+          <article class="pillar-card">
+            <span class="tag">Flexible Liquidity</span>
+            <h3>Guaranteed Liquidity &amp; Exit Desks</h3>
+            <p>Multiple structured liquidation and 1031-exchange paths starting from Year 3. We manage secondary market re-sales or direct syndicate buybacks.</p>
+            <ul class="pillar-features">
+              <li><svg class="ic"><use href="#i-check"/></svg> Pre-agreed buyback covenants on select assets</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> Structured secondary transfers with zero agent fees</li>
+              <li><svg class="ic"><use href="#i-check"/></svg> 100% legal conveyance support from Barrister Abby</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- ============ INTERACTIVE CONSULTATION BOOKING SECTION ============ -->
+        <div class="consultation-section" id="book-consultation">
+          <div class="consultation-info">
+            <span class="eyebrow eyebrow-light">Private Advisory Booking</span>
+            <h2>Book a Real Estate Investment Consultation</h2>
+            <p>Schedule a confidential, one-on-one session with our senior investment analysts. We will evaluate your portfolio objectives, examine submarket data, and present off-market allocations suited to your capital horizon.</p>
+
+            <ul class="consultation-bullets">
+              <li><span class="check"><svg class="ic"><use href="#i-check"/></svg></span> Detailed financial stress models &amp; pro-forma statements</li>
+              <li><span class="check"><svg class="ic"><use href="#i-check"/></svg></span> Legal deed verification review by our legal team</li>
+              <li><span class="check"><svg class="ic"><use href="#i-check"/></svg></span> Confidential NDA signed before portfolio disclosures</li>
+            </ul>
+          </div>
+
+          <!-- Elegant Interactive HTML/JS Contact Form -->
+          <div class="form-card">
+            <h3>Reserve Your Advisory Session</h3>
+            <p>Fill in the brief form below and an Investment Partner will confirm your appointment within 2 business hours.</p>
+
+            <form id="consultationForm" hx-post="/api/contact/" hx-swap="outerHTML" hx-indicator="#loadingIndicator">
+              <input type="hidden" name="csrfmiddlewaretoken" value="fCgId4EovYD1lJ9I3z3XEiIBKwOq47l1rP4duRfs3KIJbvHivwvN1F7E1OSmCUI9">
+              <input type="hidden" name="inquiry_type" value="consultation">
+              <input type="hidden" name="subject" value="Book a Real Estate Investment Consultation">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cName">Full Name *</label>
+                  <input type="text" id="cName" name="name" class="form-control" placeholder="e.g. Alexander Vance" required>
+                  <span class="form-error" id="cNameError">Please enter your full name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="cEmail">Corporate / Personal Email *</label>
+                  <input type="email" id="cEmail" name="email" class="form-control" placeholder="alexander@domain.com" required>
+                  <span class="form-error" id="cEmailError">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cPhone">Phone Number *</label>
+                  <input type="tel" id="cPhone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+                  <span class="form-error" id="cPhoneError">Please enter your phone number.</span>
+                </div>
+                <div class="form-group">
+                  <label for="cCapital">Planned Capital Allocation *</label>
+                  <select id="cCapital" name="capital_tier" class="form-control" required>
+                    <option value="">Select range...</option>
+                    <option value="₦50M-₦100M">₦50,000,000 &ndash; ₦100,000,000</option>
+                    <option value="₦100M-₦250M">₦100,000,000 &ndash; ₦250,000,000</option>
+                    <option value="₦250M-₦500M">₦250,000,000 &ndash; ₦500,000,000</option>
+                    <option value="₦500M+">₦500,000,000+ (Institutional / Family Office)</option>
+                  </select>
+                  <span class="form-error" id="cCapitalError">Please select an allocation tier.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cPreferredFormat">Consultation Format *</label>
+                <select id="cPreferredFormat" name="preferred_format" class="form-control" required>
+                  <option value="Virtual Video Call (Zoom / Teams)">Virtual Video Conference (Zoom / Google Meet)</option>
+                  <option value="Private Office Meeting (Abuja HQ)">In-Person Session (Austin Executive Suite)</option>
+                  <option value="Direct Phone Call">Confidential Phone Call</option>
+                  <option value="WhatsApp Strategic Chat">WhatsApp Strategic Chat</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cNotes">Specific Investment Goals (Optional)</label>
+                <textarea id="cNotes" name="message" class="form-control" rows="3" placeholder="Tell us about your target ROI, asset class preferences, or timelines..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-accent btn-block" style="padding:15px; font-size:1.02rem;">
+                Confirm Consultation Booking
+                <svg class="ic"><use href="#i-arrow"/></svg>
+              </button>
+            </form>
+
+            <div id="formSuccessMessage" style="display:none; text-align:center; padding:24px 10px;">
+              <div style="width:58px; height:58px; background:var(--green); color:#fff; border-radius:50%; display:grid; place-items:center; margin:0 auto 16px;">
+                <svg class="ic" style="width:28px; height:28px;"><use href="#i-check"/></svg>
+              </div>
+              <h4 style="font-family:var(--font-display); font-size:1.35rem; color:var(--green-deep);">Consultation Request Received!</h4>
+              <p style="color:var(--muted); font-size:.92rem; margin-top:8px;">Thank you for reaching out. A Senior Investment Director has been assigned to your profile and will contact you via your preferred channel within 2 hours.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+              <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+            </a>
+          <p>A subsidiary of Ruach Works and Creations. Premier commercial and residential real estate firm focused on modern, innovative homes and functional purpose-built spaces.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="invest.html">Invest</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Investor Portal</h4>
+          <ul class="footer-links">
+            <li><a href="#book-consultation">Book Consultation</a></li>
+            <li><a href="projects.html">Expected ROI Options</a></li>
+            <li><a href="/about/#team">Meet Legal Advisory</a></li>
+            <li><a href="contact.html">Corporate Inquiries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li><svg class="ic"><use href="#i-phone"/></svg> +(234) 9022091404</li>
+            <li><svg class="ic"><use href="#i-mail"/></svg> sales@brightstonesrealty.com</li>
+            <li><svg class="ic"><use href="#i-pin"/></svg> Suite B3, Jahi Plaza, Ben Ndi Obi Street, Off John Eshiet Ettefia Crescent, Ameyo Adadevoh Way, Jahi, Abuja</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brightstones Realty. All rights reserved.</p>
+        <p><a href="index.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="index.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE BOTTOM NAV (<768px) ============ -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bn-inner">
+      <a href="index.html" class="bn-link"><svg class="ic"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="about.html" class="bn-link"><svg class="ic"><use href="#i-users"/></svg><span>About</span></a>
+      <a href="projects.html" class="bn-link"><svg class="ic"><use href="#i-building"/></svg><span>Projects</span></a>
+      <a href="invest.html" class="bn-link active"><svg class="ic"><use href="#i-trend"/></svg><span>Invest</span></a>
+      <a href="contact.html" class="bn-link"><svg class="ic"><use href="#i-mail"/></svg><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    // Elegant Interactive HTML/JS Validation for Consultation Booking
+    const form = document.getElementById('consultationForm');
+    const successMsg = document.getElementById('formSuccessMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const name = document.getElementById('cName');
+      const email = document.getElementById('cEmail');
+      const phone = document.getElementById('cPhone');
+      const capital = document.getElementById('cCapital');
+
+      const nameErr = document.getElementById('cNameError');
+      const emailErr = document.getElementById('cEmailError');
+      const phoneErr = document.getElementById('cPhoneError');
+      const capErr = document.getElementById('cCapitalError');
+
+      // Reset states
+      [name, email, phone, capital].forEach(el => el.classList.remove('is-invalid'));
+      [nameErr, emailErr, phoneErr, capErr].forEach(el => el.classList.remove('show'));
+
+      if (!name.value.trim()) {
+        name.classList.add('is-invalid');
+        nameErr.classList.add('show');
+        isValid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        email.classList.add('is-invalid');
+        emailErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (!phone.value.trim()) {
+        phone.classList.add('is-invalid');
+        phoneErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (!capital.value) {
+        capital.classList.add('is-invalid');
+        capErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (isValid) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        if (typeof showToast === 'function') {
+          showToast('Consultation request booked successfully!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

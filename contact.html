@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with Brightstones Realty across multiple verified communication channels: direct phone, email, WhatsApp, and physical office visits.">
+  <title>Contact Us | Brightstones Realty</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="%232f5c47"/><path d="M11 21 20 13l9 8" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M14.5 20v9h11v-9" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M17.5 29v-5h5v5" stroke="%23e36c32" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 15.4c2 .7 3.4 2.3 4 4.6"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h5a1 1 0 0 1 1 1v12"/><path d="M7.5 7h2M7.5 11h2M7.5 15h2M17 12h1M17 16h1"/><path d="M2 21h20"/></g></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l1.5 5L8 10a13 13 0 0 0 6 6l2-2.5 5 1.5v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><polyline points="13 6 19 12 13 18"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></g></symbol>
+  </svg>
+
+  <!-- ============ 3-SECOND LOADING SCREEN ============ -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="pl-inner">
+            <div class="pl-logo-wrap" style="max-width:320px; width:85vw; margin:0 auto 24px; display:flex; align-items:center; justify-content:center; animation:plPulse 2.4s ease-in-out infinite;">
+        <img src="img/logo-white.png" alt="Brightstones Realty" style="width:100%; height:auto; object-fit:contain; filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));">
+      </div>
+      <p class="pl-text">Welcome to Brightstones Realty</p>
+      <div class="pl-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ ANIMATED SVG DOODLE BACKGROUND ============ -->
+  <div class="doodle-bg" aria-hidden="true">
+    <svg class="doodle-track" viewBox="0 0 1920 520" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="dtile" fill="none" stroke="#2f5c47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 132v-40l32-26 32 26v40z"/><path d="M80 132v-22h24v22"/><path d="M112 96h14"/>
+          <circle cx="205" cy="298" r="14"/><path d="M219 298h44M248 298v14M262 298v10"/>
+          <ellipse cx="322" cy="126" rx="20" ry="8"/><path d="M302 126v18c0 4.4 9 8 20 8s20-3.6 20-8v-18"/>
+          <polyline points="410,158 444,124 476,140 512,98"/><path d="M498 96h16v16"/>
+          <path d="M600 78l6.5 13.5 15 2.2-11 10.5 2.7 14.8L600 112l-13.2 7 2.7-14.8-11-10.5 15-2.2z"/>
+          <path d="M690 262q15-20 30 0t30 0 30 0"/>
+          <path d="M842 70v22M831 81h22"/>
+          <path d="M84 428v-44h20v-18h22v62"/><path d="M126 428v-70h26v70"/><path d="M152 428v-36h24v36"/><path d="M70 428h100"/>
+          <path d="M470 408c0-30 18-48 48-48 0 30-18 48-48 48z"/><path d="M476 402c8-18 18-28 34-36"/>
+          <circle cx="742" cy="420" r="20"/><path d="M734 428l16-16"/><circle cx="735" cy="413" r="2.5"/><circle cx="749" cy="427" r="2.5"/>
+          <circle cx="890" cy="300" r="9"/><circle cx="368" cy="330" r="6"/><circle cx="560" cy="60" r="7"/>
+          <path d="M640 380h34l12 12-12 12h-34z" transform="rotate(-8 656 392)"/><circle cx="648" cy="392" r="3"/>
+        </g>
+      </defs>
+      <use href="#dtile" x="0"/>
+      <use href="#dtile" x="960"/>
+    </svg>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Brightstones Realty — Home">
+          <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+          <img class="logo-mark logo-dark" src="img/logo.png" alt="Brightstones Realty">
+        </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="invest.html" class="nav-link">Invest</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%27d%20like%20to%20make%20an%20offer%20on%20one%20of%20your%20properties." class="btn btn-accent btn-sm header-cta" target="_blank" rel="noopener">Make an Offer</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Multi-Channel Communication Hub</span>
+        <h1>Get in Touch With Our Team</h1>
+        <p>Whether you are looking to make an offer, inquire about ongoing project delivery, or arrange an in-person site walk, our dedicated advisors are standing by.</p>
+      </div>
+    </section>
+
+    <!-- ============ MULTI-CHANNEL COMMUNICATION HUB ============ -->
+    <section class="section" style="padding-top:72px;">
+      <div class="container">
+
+        <!-- Distinct Tappable Communication Channels -->
+        <div class="contact-hero-channels">
+
+          <!-- Phone (tel:) Link -->
+          <a href="tel:+2349022091404" class="channel-btn-card" aria-label="Call our investment desk">
+            <div class="channel-icon phone">
+              <svg class="ic"><use href="#i-phone"/></svg>
+            </div>
+            <div class="channel-content">
+              <strong>Direct Phone Line</strong>
+              <span>Immediate assistance (8am&ndash;8pm CST)</span>
+              <span class="channel-link">+(234) 9022091404</span>
+            </div>
+          </a>
+
+          <!-- Email (mailto:) Link -->
+          <a href="mailto:sales@brightstonesrealty.com?subject=Property%20Investment%20Inquiry" class="channel-btn-card" aria-label="Email our advisory desk">
+            <div class="channel-icon email">
+              <svg class="ic"><use href="#i-mail"/></svg>
+            </div>
+            <div class="channel-content">
+              <strong>Official Inquiries</strong>
+              <span>One business day response target</span>
+              <span class="channel-link">sales@brightstonesrealty.com</span>
+            </div>
+          </a>
+
+          <!-- WhatsApp Chat Link -->
+          <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20have%20an%20inquiry%20regarding%20your%20projects." class="channel-btn-card" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+            <div class="channel-icon whatsapp">
+              <svg class="ic"><use href="#i-chat"/></svg>
+            </div>
+            <div class="channel-content">
+              <strong>WhatsApp Live Chat</strong>
+              <span>Quick response from real advisors</span>
+              <span class="channel-link">Chat on WhatsApp &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+
+        
+        <!-- Social Channels -->
+        <div style="background:#fff; border-radius:18px; padding:20px 24px; border:1px solid var(--line); margin-bottom:34px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+          <div>
+            <strong style="color:var(--green-deep); display:block; font-size:1.05rem;">Connect on Social Media</strong>
+            <span style="font-size:.85rem; color:var(--muted);">Follow our project progress and live updates across our active community channels</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="https://wa.me/2349022091404" target="_blank" rel="noopener" class="btn btn-sm btn-accent" style="padding:8px 18px;">WhatsApp</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="padding:8px 18px;">Instagram</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="padding:8px 18px;">LinkedIn</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="padding:8px 18px;">Facebook</a>
+          </div>
+        </div>
+
+        <!-- Main Form & Embedded Location Map Grid -->
+        <div class="contact-main-grid">
+
+          <!-- Left: Styled HTML Contact Form with JS Validation -->
+          <div class="form-card">
+            <h3>Send a Direct Message</h3>
+            <p>Our client desk monitors messages continuously throughout business hours.</p>
+
+            <form id="contactForm" hx-post="/api/contact/" hx-swap="outerHTML">
+              <input type="hidden" name="csrfmiddlewaretoken" value="1a5t1JVQ17S2tGZQ8oJBdNcmYFR7yb8VdnTYiwwUzTXKjsxqAlbrAaBpfXV36Yv3">
+              <input type="hidden" name="inquiry_type" value="general">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName">Your Name *</label>
+                  <input type="text" id="contactName" name="name" class="form-control" placeholder="Full name" required>
+                  <span class="form-error" id="nameError">Please enter your name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Email Address *</label>
+                  <input type="email" id="contactEmail" name="email" class="form-control" placeholder="email@address.com" required>
+                  <span class="form-error" id="emailError">Please enter a valid email.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactPhone">Phone Number *</label>
+                  <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+                  <span class="form-error" id="phoneError">Please provide your contact number.</span>
+                </div>
+                <div class="form-group">
+                  <label for="contactInterest">Primary Subject *</label>
+                  <select id="contactInterest" name="subject" class="form-control" required>
+                    <option value="">Select subject...</option>
+                    <option value="Make an Offer on a Project">Make an Offer on a Project</option>
+                    <option value="Investment Advisory / Consultation">Investment Advisory / Consultation</option>
+                    <option value="Construction Progress Walkthrough">Construction Progress Walkthrough</option>
+                    <option value="Legal & Conveyancing / Title Verification">Legal &amp; Conveyancing Inquiry</option>
+                    <option value="General Corporate Support">General Support</option>
+                  </select>
+                  <span class="form-error" id="interestError">Please select a subject.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Your Message *</label>
+                <textarea id="contactMessage" name="message" class="form-control" rows="5" placeholder="Provide details regarding the property of interest or specific queries..." required></textarea>
+                <span class="form-error" id="msgError">Please enter your message.</span>
+              </div>
+
+              <button type="submit" class="btn btn-accent btn-block" style="padding:15px; font-size:1.02rem;">
+                Send Message
+                <svg class="ic"><use href="#i-arrow"/></svg>
+              </button>
+            </form>
+
+            <div id="contactSuccessMsg" style="display:none; text-align:center; padding:30px 10px;">
+              <div style="width:58px; height:58px; background:var(--green); color:#fff; border-radius:50%; display:grid; place-items:center; margin:0 auto 16px;">
+                <svg class="ic" style="width:28px; height:28px;"><use href="#i-check"/></svg>
+              </div>
+              <h4 style="font-family:var(--font-display); font-size:1.35rem; color:var(--green-deep);">Message Sent Successfully!</h4>
+              <p style="color:var(--muted); font-size:.92rem; margin-top:8px;">Thank you for writing to Brightstones Realty. Our support desk has received your request and an advisor will reply via email or phone within 4 business hours.</p>
+            </div>
+
+          </div>
+
+          <!-- Right: Styled Office Location Map -->
+          <div class="map-wrap">
+            <!-- OpenStreetMap / Google Map styled embed of Jahi, Abuja Headquarters -->
+            <iframe
+              src="https://maps.google.com/maps?q=Jahi%20Plaza,%20Ben%20Ndi%20Obi%20Street,%20Jahi,%20Abuja,%20Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Brightstones Realty Office Location">
+            </iframe>
+            <div class="map-badge">
+              <strong>Brightstones Realty HQ</strong>
+              <span>Suite B3, Jahi Plaza, Ben Ndi Obi Street, Off John Eshiet Ettefia Crescent, Ameyo Adadevoh Way, Jahi, Abuja 78701</span>
+              <div style="margin-top:6px; font-size:.78rem; color:rgba(255,255,255,.8);">Visiting hours: Mon&ndash;Fri 9am&ndash;6pm (Walk-ins welcome)</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+              <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+            </a>
+          <p>A subsidiary of Ruach Works and Creations. Premier commercial and residential real estate firm focused on modern, innovative homes and functional purpose-built spaces.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="invest.html">Invest</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Communication</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+2349022091404">Call +(234) 9022091404</a></li>
+            <li><a href="mailto:sales@brightstonesrealty.com">sales@brightstonesrealty.com</a></li>
+            <li><a href="https://wa.me/1234567890">WhatsApp Support Desk</a></li>
+            <li><a href="#map">Austin Office Location</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li><svg class="ic"><use href="#i-phone"/></svg> +(234) 9022091404</li>
+            <li><svg class="ic"><use href="#i-mail"/></svg> sales@brightstonesrealty.com</li>
+            <li><svg class="ic"><use href="#i-pin"/></svg> Suite B3, Jahi Plaza, Ben Ndi Obi Street, Off John Eshiet Ettefia Crescent, Ameyo Adadevoh Way, Jahi, Abuja</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brightstones Realty. All rights reserved.</p>
+        <p><a href="index.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="index.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE BOTTOM NAV (<768px) ============ -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bn-inner">
+      <a href="index.html" class="bn-link"><svg class="ic"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="about.html" class="bn-link"><svg class="ic"><use href="#i-users"/></svg><span>About</span></a>
+      <a href="projects.html" class="bn-link"><svg class="ic"><use href="#i-building"/></svg><span>Projects</span></a>
+      <a href="invest.html" class="bn-link"><svg class="ic"><use href="#i-trend"/></svg><span>Invest</span></a>
+      <a href="contact.html" class="bn-link active"><svg class="ic"><use href="#i-mail"/></svg><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    // JS Form Validation for Contact Page
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccessMsg');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const name = document.getElementById('contactName');
+      const email = document.getElementById('contactEmail');
+      const phone = document.getElementById('contactPhone');
+      const interest = document.getElementById('contactInterest');
+      const message = document.getElementById('contactMessage');
+
+      const nameErr = document.getElementById('nameError');
+      const emailErr = document.getElementById('emailError');
+      const phoneErr = document.getElementById('phoneError');
+      const interestErr = document.getElementById('interestError');
+      const msgErr = document.getElementById('msgError');
+
+      [name, email, phone, interest, message].forEach(el => el.classList.remove('is-invalid'));
+      [nameErr, emailErr, phoneErr, interestErr, msgErr].forEach(el => el.classList.remove('show'));
+
+      if (!name.value.trim()) {
+        name.classList.add('is-invalid');
+        nameErr.classList.add('show');
+        isValid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        email.classList.add('is-invalid');
+        emailErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (!phone.value.trim()) {
+        phone.classList.add('is-invalid');
+        phoneErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (!interest.value) {
+        interest.classList.add('is-invalid');
+        interestErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (!message.value.trim()) {
+        message.classList.add('is-invalid');
+        msgErr.classList.add('show');
+        isValid = false;
+      }
+
+      if (isValid) {
+        contactForm.style.display = 'none';
+        contactSuccess.style.display = 'block';
+        if (typeof showToast === 'function') {
+          showToast('Your message has been sent successfully!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

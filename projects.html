@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore high-yield, investment-grade developments by Brightstones Realty. Vetted residential projects with verified ROI.">
+  <title>Projects | Brightstones Realty</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="%232f5c47"/><path d="M11 21 20 13l9 8" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M14.5 20v9h11v-9" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M17.5 29v-5h5v5" stroke="%23e36c32" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 15.4c2 .7 3.4 2.3 4 4.6"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h5a1 1 0 0 1 1 1v12"/><path d="M7.5 7h2M7.5 11h2M7.5 15h2M17 12h1M17 16h1"/><path d="M2 21h20"/></g></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l1.5 5L8 10a13 13 0 0 0 6 6l2-2.5 5 1.5v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></g></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><polyline points="13 6 19 12 13 18"/></g></symbol>
+    <symbol id="i-chevron-l" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 5 7.5 12 14.5 19"/></g></symbol>
+    <symbol id="i-chevron-r" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 5 16.5 12 9.5 19"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></symbol>
+  </svg>
+
+  <!-- ============ 3-SECOND LOADING SCREEN ============ -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="pl-inner">
+            <div class="pl-logo-wrap" style="max-width:320px; width:85vw; margin:0 auto 24px; display:flex; align-items:center; justify-content:center; animation:plPulse 2.4s ease-in-out infinite;">
+        <img src="img/logo-white.png" alt="Brightstones Realty" style="width:100%; height:auto; object-fit:contain; filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));">
+      </div>
+      <p class="pl-text">Welcome to Brightstones Realty</p>
+      <div class="pl-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ ANIMATED SVG DOODLE BACKGROUND ============ -->
+  <div class="doodle-bg" aria-hidden="true">
+    <svg class="doodle-track" viewBox="0 0 1920 520" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="dtile" fill="none" stroke="#2f5c47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 132v-40l32-26 32 26v40z"/><path d="M80 132v-22h24v22"/><path d="M112 96h14"/>
+          <circle cx="205" cy="298" r="14"/><path d="M219 298h44M248 298v14M262 298v10"/>
+          <ellipse cx="322" cy="126" rx="20" ry="8"/><path d="M302 126v18c0 4.4 9 8 20 8s20-3.6 20-8v-18"/>
+          <polyline points="410,158 444,124 476,140 512,98"/><path d="M498 96h16v16"/>
+          <path d="M600 78l6.5 13.5 15 2.2-11 10.5 2.7 14.8L600 112l-13.2 7 2.7-14.8-11-10.5 15-2.2z"/>
+          <path d="M690 262q15-20 30 0t30 0 30 0"/>
+          <path d="M842 70v22M831 81h22"/>
+          <path d="M84 428v-44h20v-18h22v62"/><path d="M126 428v-70h26v70"/><path d="M152 428v-36h24v36"/><path d="M70 428h100"/>
+          <path d="M470 408c0-30 18-48 48-48 0 30-18 48-48 48z"/><path d="M476 402c8-18 18-28 34-36"/>
+          <circle cx="742" cy="420" r="20"/><path d="M734 428l16-16"/><circle cx="735" cy="413" r="2.5"/><circle cx="749" cy="427" r="2.5"/>
+          <circle cx="890" cy="300" r="9"/><circle cx="368" cy="330" r="6"/><circle cx="560" cy="60" r="7"/>
+          <path d="M640 380h34l12 12-12 12h-34z" transform="rotate(-8 656 392)"/><circle cx="648" cy="392" r="3"/>
+        </g>
+      </defs>
+      <use href="#dtile" x="0"/>
+      <use href="#dtile" x="960"/>
+    </svg>
+  </div>
+
+  <!-- ============ HEADER (transparent → solid on scroll) ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Brightstones Realty — Home">
+          <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+          <img class="logo-mark logo-dark" src="img/logo.png" alt="Brightstones Realty">
+        </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="invest.html" class="nav-link">Invest</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%27d%20like%20to%20make%20an%20offer%20on%20one%20of%20your%20projects." class="btn btn-accent btn-sm header-cta" target="_blank" rel="noopener">Make an Offer</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Portfolio & Developments</span>
+        <h1>Featured Investment Projects</h1>
+        <p>Explore independently verified residential and commercial assets designed for superior capital appreciation, rental yield, and verifiable ROI.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION WITH GRID & TESTIMONIALS SLIDER ============ -->
+    <section class="section" id="projects-section">
+      <div class="container">
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <span style="font-weight:700; color:var(--green-deep); margin-right:8px; font-size:.9rem;">Filter by:</span>
+          <button class="filter-btn active" type="button" data-filter="all">All Projects (6)</button>
+          <button class="filter-btn" type="button" data-filter="villa">Villas & Homes</button>
+          <button class="filter-btn" type="button" data-filter="apartment">Apartments</button>
+          <button class="filter-btn" type="button" data-filter="high-roi">High ROI (17%+)</button>
+        </div>
+
+        <!-- Upper Projects Row (3 Cards) -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <article class="prop-card" data-category="apartment high-roi" data-id="12" data-name="Wuye Smart Residential Condos" data-loc="Wuye District · Central Abuja Corridor" data-price="₦98,000,000" data-roi="18.0%" data-img="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Wuye Smart Residential Condos" loading="lazy">
+              <span class="roi-badge">18.0% Expected ROI</span>
+              
+                <span class="prop-tag">Active Phase</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>Wuye Smart Residential Condos</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> Wuye District · Central Abuja Corridor</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">3 Beds</span>
+                
+                  <span class="amenity-pill">Elevator</span>
+                
+                  <span class="amenity-pill">Backup Power</span>
+                
+                  <span class="amenity-pill">Access Controlled Gate</span>
+                
+              </div>
+              <p class="prop-desc">Modern, high-quality residential apartments minutes from the Central Business District. Ideal entry point for investors seeking stable cashflow and capital growth.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦98,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=12" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Wuye%20Smart%20Residential%20Condos." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="prop-card" data-category="villa high-roi" data-id="11" data-name="Idu Industrial &amp; Logistics Facility" data-loc="Idu Industrial Layout · Abuja" data-price="₦195,000,000" data-roi="17.5%" data-img="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Idu Industrial &amp; Logistics Facility" loading="lazy">
+              <span class="roi-badge">17.5% Expected ROI</span>
+              
+                <span class="prop-tag">Active Phase</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>Idu Industrial &amp; Logistics Facility</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> Idu Industrial Layout · Abuja</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">Heavy Duty Access</span>
+                
+                  <span class="amenity-pill">3-Phase Power</span>
+                
+                  <span class="amenity-pill">Loading Bays</span>
+                
+                  <span class="amenity-pill">Perimeter Security</span>
+                
+              </div>
+              <p class="prop-desc">Purpose-built industrial facility engineered to maximize business logistics, warehousing, and commercial throughput with dedicated power connectivity.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦195,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=11" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Idu%20Industrial%20%26%20Logistics%20Facility." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="prop-card" data-category="villa" data-id="10" data-name="Maitama Prime Executive Suites" data-loc="Maitama Diplomatic Zone · Abuja" data-price="₦250,000,000" data-roi="15.5%" data-img="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Maitama Prime Executive Suites" loading="lazy">
+              <span class="roi-badge">15.5% Expected ROI</span>
+              
+                <span class="prop-tag" style="background:#2f5c47;">Completed</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>Maitama Prime Executive Suites</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> Maitama Diplomatic Zone · Abuja</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">6 Beds</span>
+                
+                  <span class="amenity-pill">Swimming Pool</span>
+                
+                  <span class="amenity-pill">Dual Garages</span>
+                
+                  <span class="amenity-pill">Smart Home Automation</span>
+                
+              </div>
+              <p class="prop-desc">Ultra-luxurious residential villa created in a prime, strategic location. Setting the benchmark for excellence with private pool, bespoke interior millwork, and top security.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦250,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=10" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Maitama%20Prime%20Executive%20Suites." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="prop-card" data-category="villa high-roi" data-id="9" data-name="Guzape Panoramic Terraces" data-loc="Guzape Hills · Asokoro Extension, Abuja" data-price="₦175,000,000" data-roi="19.2%" data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Guzape Panoramic Terraces" loading="lazy">
+              <span class="roi-badge">19.2% Expected ROI</span>
+              
+                <span class="prop-tag">Active Phase</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>Guzape Panoramic Terraces</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> Guzape Hills · Asokoro Extension, Abuja</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">4 Beds</span>
+                
+                  <span class="amenity-pill">Rooftop Lounge</span>
+                
+                  <span class="amenity-pill">Private Elevator</span>
+                
+                  <span class="amenity-pill">Green Energy</span>
+                
+              </div>
+              <p class="prop-desc">Modern, innovative, high-quality residential terrace with panoramic views of the city. Functional architecture designed for high rental yields and long-term posterity.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦175,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=9" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Guzape%20Panoramic%20Terraces." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="prop-card" data-category="villa" data-id="8" data-name="Jahi Commercial Plaza &amp; Workspace" data-loc="Jahi District · Near Ameyo Adadevoh Way, Abuja" data-price="₦85,000,000" data-roi="16.8%" data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Jahi Commercial Plaza &amp; Workspace" loading="lazy">
+              <span class="roi-badge">16.8% Expected ROI</span>
+              
+                <span class="prop-tag" style="background:#2f5c47;">Completed</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>Jahi Commercial Plaza &amp; Workspace</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> Jahi District · Near Ameyo Adadevoh Way, Abuja</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">24/7 Power</span>
+                
+                  <span class="amenity-pill">CCTV</span>
+                
+                  <span class="amenity-pill">Ample Parking</span>
+                
+                  <span class="amenity-pill">High-Speed Fiber</span>
+                
+              </div>
+              <p class="prop-desc">Functional purpose-built commercial space designed to optimize productivity. Offering premium office, retail, and workspace suites in a high-traffic prime location.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦85,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=8" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Jahi%20Commercial%20Plaza%20%26%20Workspace." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="prop-card" data-category="villa high-roi" data-id="7" data-name="EFAB Metropolis Luxury Duplex" data-loc="EFAB Metropolis · Kado / Gwarinpa, Abuja" data-price="₦145,000,000" data-roi="18.5%" data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            <div class="prop-media">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="EFAB Metropolis Luxury Duplex" loading="lazy">
+              <span class="roi-badge">18.5% Expected ROI</span>
+              
+                <span class="prop-tag">Active Phase</span>
+              
+            </div>
+            <div class="prop-body">
+              <h3>EFAB Metropolis Luxury Duplex</h3>
+              <p class="prop-loc"><svg class="ic"><use href="#i-pin"/></svg> EFAB Metropolis · Kado / Gwarinpa, Abuja</p>
+              <div class="prop-amenities">
+                
+                  <span class="amenity-pill">5 Beds</span>
+                
+                  <span class="amenity-pill">6 Baths</span>
+                
+                  <span class="amenity-pill">Solar Inverter</span>
+                
+                  <span class="amenity-pill">BQ</span>
+                
+                  <span class="amenity-pill">Smart Security</span>
+                
+              </div>
+              <p class="prop-desc">Exquisitely crafted luxury residential duplex in EFAB Metropolis. Innovative homes and excellent living with spacious en-suite rooms, smart automation, and lush greenery.</p>
+              <div class="prop-foot">
+                <span class="prop-price">₦145,000,000</span>
+                <div class="prop-actions">
+                  <a href="/project_detail.html?id=7" class="btn btn-sm btn-outline">View Details</a>
+                  <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20EFAB%20Metropolis%20Luxury%20Duplex." class="btn btn-sm btn-accent" target="_blank" rel="noopener">Make an Offer</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+
+          <!-- ============ CLIENT REVIEWS TOUCH-SLIDER (15+ Client Reviews) ============ -->
+          <div class="testimonials-row">
+            <div class="testi-slider-header">
+              <div>
+                <span class="eyebrow eyebrow-light">Client Success Stories</span>
+                <h2 class="section-title">15+ Recent Investor Reviews</h2>
+                <p style="color:rgba(255,255,255,.8); font-size:.95rem;">Swipe or drag to hear how Brightstones Realty powers client returns across our portfolio.</p>
+              </div>
+              <div class="testi-controls">
+                <button class="testi-arrow" id="testiPrev" aria-label="Previous review"><svg class="ic"><use href="#i-chevron-l"/></svg></button>
+                <button class="testi-arrow" id="testiNext" aria-label="Next review"><svg class="ic"><use href="#i-chevron-r"/></svg></button>
+              </div>
+            </div>
+
+            <!-- Touch / Drag Slider Track -->
+            <div class="testi-track" id="testiTrack">
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;High returns-on-investment and exemplary facility management. Highly recommended for commercial and residential acquisitions.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Hannah Miller">
+                  <div class="testi-user-info">
+                    <strong>Hannah Miller</strong>
+                    <span>Syndicate Investor</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Tested and trusted. Their team under Ruach Works and Creations handles project execution with world-class discipline.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="David O&#x27;Connor">
+                  <div class="testi-user-info">
+                    <strong>David O&#x27;Connor</strong>
+                    <span>Property Owner</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Innovative homes and excellent living. The delivery speed on our duplex unit surpassed expectations.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Fiona Gallagher">
+                  <div class="testi-user-info">
+                    <strong>Fiona Gallagher</strong>
+                    <span>Real Estate Client</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Smart investments for posterity. Their innovative homes and commercial plazas stand apart in architectural excellence.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Tariq Al-Mansoor">
+                  <div class="testi-user-info">
+                    <strong>Tariq Al-Mansoor</strong>
+                    <span>Commercial Portfolio Partner</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;As someone investing from outside Nigeria, Brightstones&#x27; transparency and strict escrow assurance gave me total peace of mind.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Sarah Jenkins">
+                  <div class="testi-user-info">
+                    <strong>Sarah Jenkins</strong>
+                    <span>Diaspora Investor</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Security, facility functionality, and pristine tenant support. Brightstones redefines functional purpose-built spaces in Abuja.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Dr. Kabir Bello">
+                  <div class="testi-user-info">
+                    <strong>Dr. Kabir Bello</strong>
+                    <span>Commercial Tenant · Abuja</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Brightstones provided accurate insights, great capital appreciation in Abuja, and seamless investment portfolio management.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Amara Nwosu">
+                  <div class="testi-user-info">
+                    <strong>Amara Nwosu</strong>
+                    <span>Residential Investor · Jahi</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;...consistently demonstrated an exceptional level of professionalism, integrity and dedication in each project.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Charles O. Jr.">
+                  <div class="testi-user-info">
+                    <strong>Charles O. Jr.</strong>
+                    <span>Private Client</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;We at JIOG Electrical Services Limited call Brightstones Realty home... a good understanding of vendor management, providing timely support.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Engr. Michael O.">
+                  <div class="testi-user-info">
+                    <strong>Engr. Michael O.</strong>
+                    <span>JIOG Electrical Services Limited</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;I highly recommend Brightstones Realty for a job well done and for timely delivery. They are trustworthy, highly reliable, and good to go.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Chikwado O.">
+                  <div class="testi-user-info">
+                    <strong>Chikwado O.</strong>
+                    <span>TMab Commercial Limited</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Working with Brightstones Realty as a property manager has been a rewarding experience... provides timely support to ensure the property&#x27;s optimal performance.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="ESV. Ugo M.">
+                  <div class="testi-user-info">
+                    <strong>ESV. Ugo M.</strong>
+                    <span>Ugo Monanu Associates</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;...set to be one of the best things to happen to the housing delivery market! Their project in EFAB Metropolis is fantastic. Their attention to detail was next to none.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Arc. Chike E. Nnaobi">
+                  <div class="testi-user-info">
+                    <strong>Arc. Chike E. Nnaobi</strong>
+                    <span>Maccaffera Projects Ltd</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Working with Brightstones Realty as a wrought iron, stainless steel, and glass vendor has been a worthwhile experience... manages vendors with a sense of purpose and sincerity.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Uche Dickson M.">
+                  <div class="testi-user-info">
+                    <strong>Uche Dickson M.</strong>
+                    <span>H. T. Pro Tech</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;It has been a wonderful stay in this plaza... smooth movement of business, security, management, and easy access for my customers.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Jessica U.">
+                  <div class="testi-user-info">
+                    <strong>Jessica U.</strong>
+                    <span>Wigs Klinic</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testi-card">
+                <div>
+                  <div class="testi-stars">
+                    <svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="testi-text">&ldquo;Doing business with Brightstones Realty has been a wonderful experience thus far. A statement to use for Brightstones Realty is tested and trusted.&rdquo;</p>
+                </div>
+                <div class="testi-user">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=70" alt="Festus N.">
+                  <div class="testi-user-info">
+                    <strong>Festus N.</strong>
+                    <span>Casphen Concern Ltd</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Lower Projects Row -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ RECENTLY VIEWED ============ -->
+    <section class="section-sm recent" id="recently-viewed">
+      <div class="container">
+        <div class="recent-head">
+          <div>
+            <span class="eyebrow">Pick Up Where You Left Off</span>
+            <h2 class="section-title">Recently Viewed Properties</h2>
+          </div>
+          <button class="link-btn" id="clearRecent" type="button" hidden>Clear All</button>
+        </div>
+        <div class="recent-grid" id="recentGrid" aria-live="polite" hx-get="/api/recently-viewed/" hx-trigger="load" hx-swap="innerHTML">
+          <div style="grid-column:1/-1; text-align:center; padding:24px; color:var(--muted);">Loading recently viewed properties...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO CONSULTATION CTA ============ -->
+    <section class="section-sm" style="background:#fff;">
+      <div class="container">
+        <div class="invest-panel">
+          <div>
+            <span class="eyebrow eyebrow-light">Investment Desk</span>
+            <h2 class="section-title">Looking for Bespoke Project Allocations?</h2>
+            <p>Our private clients receive off-market project teasers and priority allocations before public sales phases commence.</p>
+          </div>
+          <div class="invest-cta">
+            <a href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%27d%20like%20to%20make%20an%20offer%20on%20an%20upcoming%20project." class="btn btn-accent" target="_blank" rel="noopener">
+              Make an Offer
+              <svg class="ic"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="invest.html" class="btn btn-ghost">Book Investor Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+              <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+            </a>
+          <p>A subsidiary of Ruach Works and Creations. Premier commercial and residential real estate firm focused on modern, innovative homes and functional purpose-built spaces.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="invest.html">Invest</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul class="footer-links">
+            <li><a href="project_detail.html">Emerald Court Villas</a></li>
+            <li><a href="project_detail.html">The Ridge Penthouse</a></li>
+            <li><a href="project_detail.html">GreenView Smart Homes</a></li>
+            <li><a href="#recently-viewed">Recently Viewed</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li><svg class="ic"><use href="#i-phone"/></svg> +(234) 9022091404</li>
+            <li><svg class="ic"><use href="#i-mail"/></svg> sales@brightstonesrealty.com</li>
+            <li><svg class="ic"><use href="#i-pin"/></svg> Suite B3, Jahi Plaza, Ben Ndi Obi Street, Off John Eshiet Ettefia Crescent, Ameyo Adadevoh Way, Jahi, Abuja</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brightstones Realty. All rights reserved.</p>
+        <p><a href="index.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="index.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE BOTTOM NAV (<768px) ============ -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bn-inner">
+      <a href="index.html" class="bn-link"><svg class="ic"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="about.html" class="bn-link"><svg class="ic"><use href="#i-users"/></svg><span>About</span></a>
+      <a href="projects.html" class="bn-link active"><svg class="ic"><use href="#i-building"/></svg><span>Projects</span></a>
+      <a href="invest.html" class="bn-link"><svg class="ic"><use href="#i-trend"/></svg><span>Invest</span></a>
+      <a href="contact.html" class="bn-link"><svg class="ic"><use href="#i-mail"/></svg><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    // Filtering for projects.html
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('#projectsGrid .prop-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Touch Slider Controls for 15+ Client Reviews
+    const track = document.getElementById('testiTrack');
+    const prevBtn = document.getElementById('testiPrev');
+    const nextBtn = document.getElementById('testiNext');
+
+    if (track && prevBtn && nextBtn) {
+      const cardWidth = 360;
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>
+

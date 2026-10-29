@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed investment breakdown, expected ROI data, 3D/VR tours, and construction progress for Brightstones Realty developments.">
+  <title>Project Details | Brightstones Realty</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="%232f5c47"/><path d="M11 21 20 13l9 8" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M14.5 20v9h11v-9" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M17.5 29v-5h5v5" stroke="%23e36c32" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-sticky-cta">
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 15.4c2 .7 3.4 2.3 4 4.6"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h5a1 1 0 0 1 1 1v12"/><path d="M7.5 7h2M7.5 11h2M7.5 15h2M17 12h1M17 16h1"/><path d="M2 21h20"/></g></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l1.5 5L8 10a13 13 0 0 0 6 6l2-2.5 5 1.5v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><polyline points="13 6 19 12 13 18"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></g></symbol>
+  </svg>
+
+  <!-- ============ 3-SECOND LOADING SCREEN ============ -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="pl-inner">
+            <div class="pl-logo-wrap" style="max-width:320px; width:85vw; margin:0 auto 24px; display:flex; align-items:center; justify-content:center; animation:plPulse 2.4s ease-in-out infinite;">
+        <img src="img/logo-white.png" alt="Brightstones Realty" style="width:100%; height:auto; object-fit:contain; filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));">
+      </div>
+      <p class="pl-text">Welcome to Brightstones Realty</p>
+      <div class="pl-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ ANIMATED SVG DOODLE BACKGROUND ============ -->
+  <div class="doodle-bg" aria-hidden="true">
+    <svg class="doodle-track" viewBox="0 0 1920 520" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="dtile" fill="none" stroke="#2f5c47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 132v-40l32-26 32 26v40z"/><path d="M80 132v-22h24v22"/><path d="M112 96h14"/>
+          <circle cx="205" cy="298" r="14"/><path d="M219 298h44M248 298v14M262 298v10"/>
+          <ellipse cx="322" cy="126" rx="20" ry="8"/><path d="M302 126v18c0 4.4 9 8 20 8s20-3.6 20-8v-18"/>
+          <polyline points="410,158 444,124 476,140 512,98"/><path d="M498 96h16v16"/>
+          <path d="M600 78l6.5 13.5 15 2.2-11 10.5 2.7 14.8L600 112l-13.2 7 2.7-14.8-11-10.5 15-2.2z"/>
+          <path d="M690 262q15-20 30 0t30 0 30 0"/>
+          <path d="M842 70v22M831 81h22"/>
+          <path d="M84 428v-44h20v-18h22v62"/><path d="M126 428v-70h26v70"/><path d="M152 428v-36h24v36"/><path d="M70 428h100"/>
+          <path d="M470 408c0-30 18-48 48-48 0 30-18 48-48 48z"/><path d="M476 402c8-18 18-28 34-36"/>
+          <circle cx="742" cy="420" r="20"/><path d="M734 428l16-16"/><circle cx="735" cy="413" r="2.5"/><circle cx="749" cy="427" r="2.5"/>
+          <circle cx="890" cy="300" r="9"/><circle cx="368" cy="330" r="6"/><circle cx="560" cy="60" r="7"/>
+          <path d="M640 380h34l12 12-12 12h-34z" transform="rotate(-8 656 392)"/><circle cx="648" cy="392" r="3"/>
+        </g>
+      </defs>
+      <use href="#dtile" x="0"/>
+      <use href="#dtile" x="960"/>
+    </svg>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Brightstones Realty — Home">
+          <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+          <img class="logo-mark logo-dark" src="img/logo.png" alt="Brightstones Realty">
+        </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="invest.html" class="nav-link">Invest</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a id="headerOfferBtn" href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer." class="btn btn-accent btn-sm header-cta" target="_blank" rel="noopener">Make an Offer</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ BREADCRUMB / HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow"><a href="projects.html" style="color:var(--orange-light); text-decoration:underline;">&larr; Projects</a> &nbsp;&middot;&nbsp; Investment Breakdown</span>
+        <h1 id="projTitle">Wuye Smart Residential Condos</h1>
+        <p id="projSubtitle">Wuye District · Central Abuja Corridor &mdash; Fully verified title with guaranteed rental management.</p>
+      </div>
+    </section>
+
+    <!-- ============ MAIN MEDIA GALLERY & INVESTMENT SIDEBAR ============ -->
+    <section class="section" style="padding-top:48px;">
+      <div class="container">
+
+        <div class="detail-layout">
+
+          <!-- Left Column: Media Gallery, 3D/VR, Construction Progress, Description -->
+          <div class="detail-main">
+
+            <!-- Interactive Media Gallery -->
+            <div class="media-gallery">
+              <div class="main-stage" id="mainStage">
+                
+                <iframe src="https://momento360.com/e/u/7ec892e6669941a59fcfae2dfba492ca?utm_campaign=embed&amp;utm_source=other&amp;heading=0&amp;pitch=0&amp;field-of-view=75" allowfullscreen style="width:100%; height:100%; border:none;" title="3D VR Tour"></iframe>
+                <span class="stage-badge roi-chip" style="background:var(--green);" id="stageRoi">18.0% Expected ROI (3D/VR Active)</span>
+                
+              </div>
+
+              <!-- Thumbnails selector -->
+              <div class="gallery-thumbs" id="galleryThumbs">
+                <div class="gallery-thumb active" data-type="img" data-src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85">
+                  <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=300&q=70" alt="Exterior Render">
+                </div>
+                <div class="gallery-thumb" data-type="img" data-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85">
+                  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=70" alt="Living & Patio">
+                </div>
+                <div class="gallery-thumb" data-type="img" data-src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85">
+                  <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=300&q=70" alt="Master Suite">
+                </div>
+                <div class="gallery-thumb" data-type="img" data-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85">
+                  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&q=70" alt="Courtyard View">
+                </div>
+                <div class="gallery-thumb vr-badge" data-type="vr" data-src="https://momento360.com/e/u/7ec892e6669941a59fcfae2dfba492ca?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75">
+                  <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=300&q=70" alt="3D Virtual Reality Tour">
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Specs Row -->
+            <div class="detail-specs-grid">
+              <div class="spec-box">
+                <span>Asset Class</span>
+                <strong id="specClass">3-Bedroom Smart Apartment</strong>
+              </div>
+              <div class="spec-box">
+                <span>Total Units</span>
+                <strong id="specUnits">28 Villas</strong>
+              </div>
+              <div class="spec-box">
+                <span>Current Stage</span>
+                <strong id="specStage">Finishing Phase (80%)</strong>
+              </div>
+              <div class="spec-box">
+                <span>Handover Date</span>
+                <strong id="specHandover">Q4 2026</strong>
+              </div>
+            </div>
+
+            <!-- Detailed Description & ROI Data Section -->
+            <div class="detail-desc-box">
+              <h2>Project Overview & Investment Case</h2>
+              <p id="projLongDesc">Modern, high-quality residential apartments minutes from the Central Business District. Ideal entry point for investors seeking stable cashflow and capital growth.</p>
+              <p>Each residence features open-concept architectural zoning, floor-to-ceiling double-glazed solar glass, private plunge pools, and pre-installed battery storage integration. Our turnkey asset management framework provides 100% hands-off management, handles legal vetting of high-income tenants, and remits audited net returns quarterly.</p>
+
+              <h3 style="font-size:1.3rem; color:var(--green-deep); margin:26px 0 14px;">Detailed Financial & Expected ROI Data</h3>
+              <p>Brightstones Realty independently stress-tests all financial models against three macroeconomic scenarios (Base, Conservative, Downside). Projected yields are backed by existing comparable submarket contracts:</p>
+
+              <div style="overflow-x:auto; margin-top:16px;">
+                <table style="width:100%; border-collapse:collapse; text-align:left; font-size:.92rem;">
+                  <thead>
+                    <tr style="background:var(--sand); color:var(--green-deep); border-bottom:2px solid var(--line);">
+                      <th style="padding:12px 14px;">Metric</th>
+                      <th style="padding:12px 14px;">Conservative</th>
+                      <th style="padding:12px 14px; font-weight:800; color:var(--orange);">Target Model</th>
+                      <th style="padding:12px 14px;">Accelerated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom:1px solid var(--line);">
+                      <td style="padding:12px 14px; font-weight:600;">Expected Net Rental Yield</td>
+                      <td style="padding:12px 14px;">10.4% p.a.</td>
+                      <td style="padding:12px 14px; font-weight:700; color:var(--green-deep);">12.1% p.a.</td>
+                      <td style="padding:12px 14px;">13.8% p.a.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--line);">
+                      <td style="padding:12px 14px; font-weight:600;">Annual Capital Appreciation</td>
+                      <td style="padding:12px 14px;">4.5% p.a.</td>
+                      <td style="padding:12px 14px; font-weight:700; color:var(--green-deep);">6.4% p.a.</td>
+                      <td style="padding:12px 14px;">8.2% p.a.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--line); background:rgba(227,108,50,.06);">
+                      <td style="padding:12px 14px; font-weight:700; color:var(--green-deep);">Total Expected ROI (%)</td>
+                      <td style="padding:12px 14px; font-weight:700;">14.9%</td>
+                      <td style="padding:12px 14px; font-weight:800; color:var(--orange); font-size:1.05rem;">18.5% Expected ROI</td>
+                      <td style="padding:12px 14px; font-weight:700;">22.0%</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:12px 14px; font-weight:600;">Minimum Hold Covenant</td>
+                      <td style="padding:12px 14px;">3 Years</td>
+                      <td style="padding:12px 14px; font-weight:700;">3 Years</td>
+                      <td style="padding:12px 14px;">5 Years</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Dedicated Call to Action beneath single project layout -->
+              <div class="offer-cta-box" style="margin-top:36px; padding:24px; background:var(--sand); border-radius:18px; text-align:center;">
+                <h4 style="font-family:var(--font-display); font-size:1.3rem; color:var(--green-deep); margin-bottom:6px;">Ready to secure your allocation?</h4>
+                <p style="font-size:.9rem; color:var(--muted); margin-bottom:14px;">Connect directly with the deal lead on WhatsApp to lock in unit pricing before public phase closure.</p>
+                <a id="bottomOfferBtn" href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Wuye%20Smart%20Residential%20Condos." class="btn btn-accent" target="_blank" rel="noopener">
+                  Make an Offer
+                  <svg class="ic"><use href="#i-arrow"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Current Construction & Progress Photographs -->
+            <div class="progress-gallery">
+              <span class="eyebrow">Real-Time Progress Tracking</span>
+              <h3 style="font-family:var(--font-display); font-size:1.6rem; color:var(--green-deep);">Current Construction & Milestone Photos</h3>
+              <p style="color:var(--muted); font-size:.92rem; margin-top:6px;">Updated weekly by our on-site engineering team. All works undergo municipal QA compliance testing.</p>
+
+              <div class="progress-grid">
+                <div class="progress-item">
+                  <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=600&q=80" alt="Structural framing complete">
+                  <div class="progress-caption">Phase 1: Superstructure & Reinforced Concrete &mdash; 100% Completed</div>
+                </div>
+                <div class="progress-item">
+                  <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Exterior facade installation">
+                  <div class="progress-caption">Phase 2: Glazing, Solar Roofing & Facade &mdash; 92% Completed</div>
+                </div>
+                <div class="progress-item">
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Interior fitout">
+                  <div class="progress-caption">Phase 3: MEP, Smart Automation & Interiors &mdash; Currently in Progress</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive 3D Render & VR Component -->
+            <div class="vr-experience-section">
+              <span class="eyebrow">Interactive 3D / Virtual Reality Component</span>
+              <h3 style="font-family:var(--font-display); font-size:1.6rem; color:var(--green-deep);">Immersive 3D Walkthrough & Render Experience</h3>
+              <p style="color:var(--muted); font-size:.92rem; margin-top:6px;">Explore this development in 360-degree spatial VR. Compatible with desktop, mobile touch, and VR headsets.</p>
+
+              <div class="vr-interactive-box">
+                <iframe src="https://momento360.com/e/u/7ec892e6669941a59fcfae2dfba492ca?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75" allowfullscreen loading="lazy" title="3D VR Tour"></iframe>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sticky Investment Card & Make an Offer CTA -->
+          <div class="detail-sidebar">
+            <div class="invest-card-box">
+              <span class="eyebrow">Price & Allocation</span>
+              <div class="price-roi-bar">
+                <div class="price" id="sidebarPrice">₦98,000,000</div>
+                <div class="roi" id="sidebarRoi">18.0% ROI</div>
+              </div>
+
+              <div class="roi-breakdown">
+                <div class="roi-row">
+                  <span>Down Payment (20%)</span>
+                  <strong id="downPayment">₦29,000,000</strong>
+                </div>
+                <div class="roi-row">
+                  <span>Estimated Annual Net</span>
+                  <strong id="annualNet">₦26,825,000 / yr</strong>
+                </div>
+                <div class="roi-row">
+                  <span>Quarterly Distribution</span>
+                  <strong id="quarterlyNet">₦6,706,250 / qtr</strong>
+                </div>
+                <div class="roi-row">
+                  <span>Title Status</span>
+                  <strong style="color:var(--green);">Clean Title Deed</strong>
+                </div>
+              </div>
+
+              <!-- Primary Make an Offer CTA -->
+              <div class="offer-cta-box">
+                <a id="mainOfferBtn" href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Wuye%20Smart%20Residential%20Condos." class="btn btn-accent btn-block" target="_blank" rel="noopener">
+                  Make an Offer
+                  <svg class="ic"><use href="#i-arrow"/></svg>
+                </a>
+                <a href="invest.html" class="btn btn-outline btn-block">Schedule Advisory Call</a>
+              </div>
+
+              <div style="margin-top:20px; font-size:.82rem; color:var(--muted); display:grid; gap:8px;">
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <svg class="ic" style="color:var(--green);"><use href="#i-shield"/></svg>
+                  <span>100% Escrow-protected title transfer</span>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <svg class="ic" style="color:var(--green);"><use href="#i-check"/></svg>
+                  <span>Verified zoning & environmental certification</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ MOBILE STICKY BOTTOM MAKE AN OFFER BAR ============ -->
+  <aside class="sticky-offer-bar" id="stickyOfferBar">
+    <div class="sticky-offer-inner">
+      <div>
+        <span style="font-size:.76rem; color:var(--muted); display:block;">Starting From</span>
+        <strong id="mobileStickyPrice" style="color:var(--green-deep); font-size:1.15rem;">₦98,000,000</strong>
+      </div>
+      <a id="stickyOfferBtn" href="https://wa.me/2349022091404?text=Hi%20Brightstones%2C%20I%20want%20to%20Make%20an%20Offer%20on%20Wuye%20Smart%20Residential%20Condos." class="btn btn-accent" target="_blank" rel="noopener">
+        Make an Offer
+      </a>
+    </div>
+  </aside>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+              <img class="logo-mark logo-white" src="img/logo-white.png" alt="Brightstones Realty">
+            </a>
+          <p>A subsidiary of Ruach Works and Creations. Premier commercial and residential real estate firm focused on modern, innovative homes and functional purpose-built spaces.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="invest.html">Invest</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul class="footer-links">
+            <li><a href="project_detail.html">Emerald Court Villas</a></li>
+            <li><a href="project_detail.html">The Ridge Penthouse</a></li>
+            <li><a href="project_detail.html">GreenView Smart Homes</a></li>
+            <li><a href="#recently-viewed">Recently Viewed</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li><svg class="ic"><use href="#i-phone"/></svg> +(234) 9022091404</li>
+            <li><svg class="ic"><use href="#i-mail"/></svg> sales@brightstonesrealty.com</li>
+            <li><svg class="ic"><use href="#i-pin"/></svg> Suite B3, Jahi Plaza, Ben Ndi Obi Street, Off John Eshiet Ettefia Crescent, Ameyo Adadevoh Way, Jahi, Abuja</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brightstones Realty. All rights reserved.</p>
+        <p><a href="index.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="index.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE BOTTOM NAV (<768px) ============ -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bn-inner">
+      <a href="index.html" class="bn-link"><svg class="ic"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="about.html" class="bn-link"><svg class="ic"><use href="#i-users"/></svg><span>About</span></a>
+      <a href="projects.html" class="bn-link active"><svg class="ic"><use href="#i-building"/></svg><span>Projects</span></a>
+      <a href="invest.html" class="bn-link"><svg class="ic"><use href="#i-trend"/></svg><span>Invest</span></a>
+      <a href="contact.html" class="bn-link"><svg class="ic"><use href="#i-mail"/></svg><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    // Project database for dynamic view
+    const projectsData = {
+      p1: {
+        title: "Emerald Court Villas",
+        subtitle: "Tech Corridor · Austin, Texas — Fully verified title with guaranteed 5-year rental covenant.",
+        price: "₦145,000,000",
+        roi: "18.5%",
+        downPayment: "₦29,000,000",
+        annualNet: "₦26,825,000 / yr",
+        quarterlyNet: "₦6,706,250 / qtr",
+        assetClass: "Luxury Residential",
+        units: "28 Villas",
+        stage: "Finishing Phase (85%)",
+        handover: "Q2 2027",
+        desc: "Emerald Court Villas represents an exceptional opportunity to acquire high-grade residential assets in the epicenter of the Austin tech corridor. Responds directly to acute housing shortages for senior professionals and relocation executives.",
+        images: [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+        ]
+      },
+      p2: {
+        title: "Haven Garden Apartments",
+        subtitle: "Waterfront District · Miami, Florida — Boutique coastal residences with high occupancy.",
+        price: "₦85,000,000",
+        roi: "14.2%",
+        downPayment: "₦29,600",
+        annualNet: "₦21,016 / yr",
+        quarterlyNet: "₦5,254 / qtr",
+        assetClass: "Coastal Condominiums",
+        units: "44 Apartments",
+        stage: "Construction (70%)",
+        handover: "Q4 2026",
+        desc: "Haven Garden Apartments pairs pristine waterfront access with strong urban rental demand. Engineered to provide passive cashflow with quarterly dividend disbursements.",
+        images: [
+          "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+        ]
+      },
+      p3: {
+        title: "The Ridge Penthouse",
+        subtitle: "Mountain Views · Scottsdale, Arizona — Signature ultra-luxury penthouse suites.",
+        price: "₦175,000,000",
+        roi: "16.8%",
+        downPayment: "₦82,000",
+        annualNet: "₦68,880 / yr",
+        quarterlyNet: "₦17,220 / qtr",
+        assetClass: "Ultra-Luxury Penthouse",
+        units: "12 Exclusive Suites",
+        stage: "Structure Complete (65%)",
+        handover: "Q1 2027",
+        desc: "Elevated high above Scottsdale with breathtaking natural panoramic views. Engineered with custom millwork, wrap-around terraces, and private elevator service.",
+        images: [
+          "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+        ]
+      },
+      p4: {
+        title: "Cedar Grove Duplexes",
+        subtitle: "Foothills Park · Denver, Colorado — Sustainable timber builds with long-term capital yields.",
+        price: "₦125,000,000",
+        roi: "15.4%",
+        downPayment: "₦46,500",
+        annualNet: "₦35,805 / yr",
+        quarterlyNet: "₦8,951 / qtr",
+        assetClass: "Multi-Family Residential",
+        units: "16 Duplexes",
+        stage: "Finishing Phase (88%)",
+        handover: "Q3 2026",
+        desc: "Constructed with sustainable timber framing and thermal envelope engineering. High demand among tech and health professionals moving into Denver.",
+        images: [
+          "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+        ]
+      },
+      p5: {
+        title: "Palm Springs Terrace",
+        subtitle: "Resort Corridor · Orlando, Florida — Short-term rental compliant resort townhomes.",
+        price: "₦95,000,000",
+        roi: "17.1%",
+        downPayment: "₦37,800",
+        annualNet: "₦32,319 / yr",
+        quarterlyNet: "₦8,079 / qtr",
+        assetClass: "Resort Townhomes",
+        units: "32 Units",
+        stage: "Pre-Handover (95%)",
+        handover: "Q1 2027",
+        desc: "Turnkey vacation and executive rentals located minutes from convention centers and amusement theme parks with peak seasonal yield.",
+        images: [
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+        ]
+      },
+      p6: {
+        title: "GreenView Smart Homes",
+        subtitle: "Biltmore Edge · Phoenix, Arizona — Net-zero energy micro-grid automated villas.",
+        price: "₦98,000,000",
+        roi: "19.3%",
+        downPayment: "₦35,200",
+        annualNet: "₦33,968 / yr",
+        quarterlyNet: "₦8,492 / qtr",
+        assetClass: "Smart Eco-Villas",
+        units: "24 Homes",
+        stage: "Civil Infrastructure (50%)",
+        handover: "Q3 2027",
+        desc: "High capital upside automated eco-homes with integrated battery storage and proprietary tenant management algorithms.",
+        images: [
+          "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+        ]
+      }
+    };
+
+    // Parse URL parameter ?id=p1
+    const params = new URLSearchParams(window.location.search);
+    const pid = params.get('id') || 'p1';
+    const project = projectsData[pid] || projectsData['p1'];
+
+    // Populate data
+    document.getElementById('projTitle').textContent = project.title;
+    document.getElementById('projSubtitle').textContent = project.subtitle;
+    document.getElementById('sidebarPrice').textContent = project.price;
+    document.getElementById('sidebarRoi').textContent = project.roi + " Expected ROI";
+    document.getElementById('stageRoi').textContent = project.roi + " Expected ROI";
+    document.getElementById('downPayment').textContent = project.downPayment;
+    document.getElementById('annualNet').textContent = project.annualNet;
+    document.getElementById('quarterlyNet').textContent = project.quarterlyNet;
+    document.getElementById('specClass').textContent = project.assetClass;
+    document.getElementById('specUnits').textContent = project.units;
+    document.getElementById('specStage').textContent = project.stage;
+    document.getElementById('specHandover').textContent = project.handover;
+    document.getElementById('projLongDesc').textContent = project.desc;
+    document.getElementById('mobileStickyPrice').textContent = project.price;
+
+    const waMsg = encodeURIComponent(`Hi Brightstones, I want to Make an Offer on ${project.title}.`);
+    const waUrl = `https://wa.me/2349022091404?text=${waMsg}`;
+    document.getElementById('mainOfferBtn').href = waUrl;
+    document.getElementById('bottomOfferBtn').href = waUrl;
+    document.getElementById('stickyOfferBtn').href = waUrl;
+    document.getElementById('headerOfferBtn').href = waUrl;
+
+    // Gallery switching
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    const mainStage = document.getElementById('mainStage');
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+
+        const type = thumb.dataset.type;
+        const src = thumb.dataset.src;
+
+        if (type === 'vr') {
+          mainStage.innerHTML = `
+            <iframe src="${src}" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>
+            <span class="stage-badge roi-chip" style="background:var(--green);">${project.roi} Expected ROI (VR Mode)</span>
+          `;
+        } else {
+          mainStage.innerHTML = `
+            <img id="stageImg" src="${src}" alt="${project.title}">
+            <span class="stage-badge roi-chip">${project.roi} Expected ROI</span>
+          `;
+        }
+      });
+    });
+
+    // Record view in localStorage for recently viewed
+    if (typeof recordView === 'function') {
+      recordView({
+        dataset: {
+          id: pid,
+          name: project.title,
+          loc: project.subtitle.split('—')[0],
+          price: project.price,
+          roi: project.roi,
+          img: project.images[0]
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
